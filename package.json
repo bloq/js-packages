@@ -1,0 +1,68 @@
+{
+  "name": "many-promises",
+  "license": "MIT",
+  "scripts": {
+    "format:check": "prettier --check .",
+    "lint": "eslint --cache .",
+    "test": "npx lerna run test --concurrency 1 --stream",
+    "test:changed": "npm run test -- --since master"
+  },
+  "dependencies": {
+    "lerna": "^7.0.2"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^8.43.0",
+    "eslint-config-bloq": "^3.4.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^13.2.2",
+    "mocha": "^10.2.0",
+    "nyc": "^15.1.0",
+    "sinon": "^15.2.0",
+    "prettier": "^2.8.8"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "eslintConfig": {
+    "extends": [
+      "bloq",
+      "bloq/node",
+      "prettier"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "*.spec.js"
+        ],
+        "extends": [
+          "bloq/mocha",
+          "prettier"
+        ],
+        "rules": {
+          "node/no-extraneous-require": "off"
+        }
+      }
+    ],
+    "root": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run test:changed"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{css,js,json,md,yml}": "prettier --write"
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "quoteProps": "consistent",
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none"
+  }
+}
