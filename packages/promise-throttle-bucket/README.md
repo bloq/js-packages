@@ -16,7 +16,7 @@ npm install promise-throttle-bucket
 ## Usage
 
 ```js
-const pThrottleBucket = require 'promise-throttle-bucket'
+const pThrottleBucket = require('promise-throttle-bucket')
 
 const throttledFn = pThrottleBucket(
   describeEc2Instance,

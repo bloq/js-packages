@@ -20,7 +20,7 @@ npm install promise-mem
 ## Usage
 
 ```js
-const pMemoize = require 'promise-mem'
+const pMemoize = require('promise-mem')
 
 const memoized = pMemoize(asyncCall)
 
@@ -64,7 +64,7 @@ Type: `boolean`
 Default: `true`
 
 This flag will force the expiration of the cached value to be computed from the time that value was obtained.
-If unset, the value will expired from the time it was requested, without considering the time it took to get it into the cache.
+If unset, the expiration will be set starting from the request time, without considering the time it takes to get the value into the cache.
 
 ##### options.maxAge?
 

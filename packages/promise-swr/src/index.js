@@ -6,7 +6,7 @@ const debug = require('debug')('promise-swr')
  * Caches a promise-returning function with a stale-while-revalidate strategy.
  *
  * Every time the wrapper function is called, if there is no data in the cache
- * or if the age of the data is to old, new data will be fetched and returned.
+ * or if the age of the data is too old, new data will be fetched and returned.
  * If the age of the data is greater than the revalidation threshold but still
  * valid, it will be returned and new data will be fetched in the background. If
  * the data is below the revalidation threshold, it is fresh and is returned

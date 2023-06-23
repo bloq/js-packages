@@ -17,7 +17,7 @@ npm install promise-mem
 ## Usage
 
 ```js
-const pStaleIfError = require 'promise-stale-if-error'
+const pStaleIfError = require('promise-stale-if-error')
 
 const wrappedFn = pStaleIfError(notSoReliableAsyncCall)
 
@@ -58,7 +58,7 @@ Must implement these methods: `has(key)`, `set(key, value)`, `get(key)` and `del
 
 Type: `(err: Error) => any`
 
-If defined, calling `fn` fails and there is no good value was already retrieved, this function will be called instead.
+If calling `fn` fails and there is no good value retrieved yet, this function will be called instead.
 The returning value will be passed over the caller of the wrapped function.
 
 ##### options.resolver?
@@ -73,5 +73,5 @@ By default, it will only consider the first argument and use strict equality to 
 
 The wrapped version of `fn`.
 It resolves to the result of calling `fn()`.
-On failure it will resolve to the last successful result.
+On failure, it will resolve to the last successful result.
 If there is none and `onError` was defined, it will resolve to the result of calling it.

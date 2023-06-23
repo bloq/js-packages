@@ -6,7 +6,7 @@ It is like the [`SWR React hook`](https://swr.vercel.app/) but for backend devel
 
 ## How it works
 
-Every time the wrapper function is called, if there is no data in the cache or if the age of the data is to old, new data will be fetched and returned.
+Every time the wrapper function is called, if there is no data in the cache or if the age of the data is too old, new data will be fetched and returned.
 If the age of the data is greater than the revalidation threshold but still valid (stale), it will be returned and new data will be fetched in the background.
 If several revalidation actions are triggered in parallel, it is guaranteed that only one single call to the wrapped function (per cache key) will be executed.
 If the data is below the revalidation threshold, it is fresh and is returned right away.
@@ -21,7 +21,7 @@ npm install promise-swr
 
 ```js
 const { setTimeout } = require('node:timers/promises')
-const pSwr = require 'promise-swr'
+const pSwr = require('promise-swr')
 
 const cachedFn = pSwr(asyncCall)
 
@@ -85,7 +85,7 @@ By default, it will only consider the first argument and use strict equality to 
 Type: `number`
 Default: `0`
 
-The maximum of time in milliseconds to consider a value fresh.
+The maximum time in milliseconds to consider a value fresh.
 After this time, the value will be returned but a revalidation action will be triggered to freshen the cache.
 
 ### cachedFn
