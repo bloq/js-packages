@@ -1,0 +1,39 @@
+{
+  "name": "promise-throttle-bucket",
+  "version": "1.0.0",
+  "description": "Throttles a promise-returning function using the token-bucket algorithm",
+  "keywords": [
+    "async",
+    "aws",
+    "bucket",
+    "function",
+    "throttle",
+    "token"
+  ],
+  "author": "Gabriel Montes <gabriel@bloq.com>",
+  "files": [
+    "src"
+  ],
+  "main": "src/index.js",
+  "scripts": {
+    "coverage": "nyc npm run test",
+    "deps:check": "dependency-check --no-dev .",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "debug": "^4.3.2"
+  },
+  "nyc": {
+    "all": true,
+    "include": [
+      "src/**/*.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ]
+  },
+  "engines": {
+    "node": ">= 14"
+  }
+}

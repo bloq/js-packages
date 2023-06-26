@@ -1,0 +1,42 @@
+{
+  "name": "promise-stale-if-error",
+  "version": "1.0.0",
+  "description": "Wraps a promise-returning function so it resolves to the last good value on error",
+  "keywords": [
+    "async",
+    "error",
+    "function",
+    "last",
+    "promise",
+    "stale"
+  ],
+  "bugs": "https://github.com/bloq/tiny-promises/issues",
+  "license": "MIT",
+  "author": "Gabriel Montes <gabriel@bloq.com>",
+  "files": [
+    "src"
+  ],
+  "main": "src/index.js",
+  "repository": "bloq/tiny-promises",
+  "scripts": {
+    "coverage": "nyc npm run test",
+    "deps:check": "dependency-check --no-dev .",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "debug": "^4.3.2"
+  },
+  "nyc": {
+    "all": true,
+    "include": [
+      "src/**/*.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ]
+  },
+  "engines": {
+    "node": ">= 14"
+  }
+}
