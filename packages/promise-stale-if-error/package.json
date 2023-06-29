@@ -1,6 +1,6 @@
 {
   "name": "promise-stale-if-error",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Wraps a promise-returning function so it resolves to the last good value on error",
   "keywords": [
     "async",

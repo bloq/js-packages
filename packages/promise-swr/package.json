@@ -1,6 +1,6 @@
 {
   "name": "promise-swr",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Caches a promise-returning function with a stale-while-revalidate strategy",
   "keywords": [
     "async",
