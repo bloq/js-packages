@@ -10,14 +10,14 @@
     "p-memoize",
     "promise"
   ],
-  "bugs": "https://github.com/bloq/tiny-promises/issues",
+  "bugs": "https://github.com/bloq/js-packages/issues",
   "license": "MIT",
   "author": "Gabriel Montes <gabriel@bloq.com>",
   "files": [
     "src"
   ],
   "main": "src/index.js",
-  "repository": "bloq/tiny-promises",
+  "repository": "bloq/js-packages",
   "scripts": {
     "coverage": "nyc npm run test",
     "deps:check": "dependency-check --no-dev .",
