@@ -11,7 +11,7 @@ This is a collection of small and useful packages we use across many of our solu
 - [`promise-swr`](./packages/promise-swr): Caches a promise-returning function with a stale-while-revalidate strategy.
 - [`promise-throttle-bucket`](./packages/promise-throttle-bucket): Throttles a promise-returning function using the token-bucket algorithm.
 
-### Timy ones
+### Tiny ones
 
 - [`tiny-mem`](./packages/tiny-mem): Minimal, no-dependencies memoization helper.
 
