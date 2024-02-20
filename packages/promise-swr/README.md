@@ -1,5 +1,7 @@
 # promise-swr
 
+![NPM Version](https://img.shields.io/npm/v/promise-swr)
+
 Caches a promise-returning function with a stale-while-revalidate strategy, popularized by the HTTP Cache-Control Extensions for Stale Content ([RFC 5861](https://datatracker.ietf.org/doc/html/rfc5861)).
 
 It is like the [`SWR React hook`](https://swr.vercel.app/) but for backend development.

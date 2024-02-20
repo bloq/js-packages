@@ -15,6 +15,10 @@ This is a collection of small and useful packages we use across many of our solu
 
 - [`tiny-mem`](./packages/tiny-mem): Minimal, no-dependencies memoization helper.
 
+### Utilities
+
+- [`fetch-plus-plus`](./packages/fetch-plus-plus): A wrapper utility around `fetch`.
+
 ## Publishing
 
 To publish the latest changes to the packages, execute this command:

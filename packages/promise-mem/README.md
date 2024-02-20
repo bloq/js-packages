@@ -1,5 +1,7 @@
 # promise-mem
 
+![NPM Version](https://img.shields.io/npm/v/promise-mem)
+
 [Memoizes](https://en.wikipedia.org/wiki/Memoization) a promise-returning function.
 
 ## Motivation

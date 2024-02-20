@@ -1,0 +1,30 @@
+{
+  "name": "fetch-plus-plus",
+  "version": "1.0.0",
+  "description": "A simple isomorphic wrapper around fetch with retries and error handling",
+  "keywords": [
+    "fetch",
+    "node",
+    "isomorphic",
+    "retry",
+    "error"
+  ],
+  "bugs": "https://github.com/bloq/js-packages/issues",
+  "license": "MIT",
+  "author": {
+    "name": "Gonzalo D'Elia",
+    "email": "gonzalo@bloq.com"
+  },
+  "dependencies": {
+    "http-errors": "^2.0.0",
+    "isomorphic-fetch": "^3.0.0",
+    "p-retry": "^4.6.1"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "coverage": "nyc npm run test",
+    "test": "mocha"
+  }
+}

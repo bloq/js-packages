@@ -1,5 +1,7 @@
 # tiny-mem
 
+![NPM Version](https://img.shields.io/npm/v/tiny-mem)
+
 Minimal, no-dependencies [memoization](https://en.wikipedia.org/wiki/Memoization) helper.
 
 ## Motivation
