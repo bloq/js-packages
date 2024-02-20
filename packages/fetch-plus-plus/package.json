@@ -15,7 +15,6 @@
     "name": "Gonzalo D'Elia",
     "email": "gonzalo@bloq.com"
   },
-  "main": "src/index.js",
   "dependencies": {
     "http-errors": "^2.0.0",
     "isomorphic-fetch": "^3.0.0",
