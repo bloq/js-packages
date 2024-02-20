@@ -18,16 +18,20 @@ npm install promise-throttle-bucket
 ```js
 const pThrottleBucket = require('promise-throttle-bucket')
 
-const throttledFn = pThrottleBucket(
-  describeEc2Instance,
-  { max: 100, refill: 20 }
-)
+const throttledFn = pThrottleBucket(describeEc2Instance, {
+  max: 100,
+  refill: 20
+})
 
-Promise.all([/* array of 150 instances */].map(throttledFn))
-    // After 0s, described instances 0-99
-    // After 1s, described instances 100-119
-    // After 2s, described instances 120-139
-    // After 3s, described instances 140-150
+Promise.all(
+  [
+    /* array of 150 instances */
+  ].map(throttledFn)
+)
+  // After 0s, described instances 0-99
+  // After 1s, described instances 100-119
+  // After 2s, described instances 120-139
+  // After 3s, described instances 140-150
   .then(function (instances) {
     // Resolves after all the instances were described.
   })
