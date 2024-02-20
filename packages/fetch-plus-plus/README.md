@@ -1,5 +1,7 @@
 # fetch-plus-plus
 
+![NPM Version](https://img.shields.io/npm/v/fetch-plus-plus)
+
 A simple isomorphic wrapper around fetch with retries and error handling
 
 ## Motivation

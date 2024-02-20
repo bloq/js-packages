@@ -1,5 +1,7 @@
 # promise-throttle-bucket
 
+![NPM Version](https://img.shields.io/npm/v/promise-throttle-bucket)
+
 [Throttles](https://css-tricks.com/debouncing-throttling-explained-examples/) a promise-returning function using the [token-bucket algorithm](https://en.wikipedia.org/wiki/Token_bucket).
 
 ## Motivation

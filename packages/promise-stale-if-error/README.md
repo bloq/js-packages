@@ -1,5 +1,7 @@
 # promise-stale-if-error
 
+![NPM Version](https://img.shields.io/npm/v/promise-stale-if-error)
+
 Wraps a promise-returning function so it resolves to the last good value on error.
 
 ## Motivation
