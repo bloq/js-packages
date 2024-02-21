@@ -19,4 +19,4 @@ declare function fetchPlusPlus(
   url: Request['url'],
   options?: RequestInit & ExtendedOptions
 ): Promise<any>
-export default fetchPlusPlus
+export = fetchPlusPlus
