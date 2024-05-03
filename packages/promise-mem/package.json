@@ -14,14 +14,15 @@
   "license": "MIT",
   "author": "Gabriel Montes <gabriel@bloq.com>",
   "files": [
-    "src"
+    "src",
+    "index.d.ts"
   ],
   "main": "src/index.js",
   "repository": "bloq/js-packages",
   "scripts": {
-    "coverage": "nyc npm run test",
+    "coverage": "nyc mocha",
     "deps:check": "dependency-check --no-dev .",
-    "test": "mocha"
+    "test": "mocha && tsd"
   },
   "dependencies": {
     "debug": "^4.3.2"
@@ -38,5 +39,9 @@
   },
   "engines": {
     "node": ">= 14"
-  }
+  },
+  "devDependencies": {
+    "tsd": "0.31.0"
+  },
+  "types": "src/index.d.ts"
 }
