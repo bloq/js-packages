@@ -56,7 +56,7 @@
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix",
-    "*.{css,js,json,md,yml}": "prettier --write"
+    "*.{css,js,json,md,ts,yml}": "prettier --write"
   },
   "prettier": {
     "arrowParens": "avoid",
