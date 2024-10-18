@@ -55,8 +55,13 @@
     }
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix",
-    "*.{css,js,json,md,ts,yml}": "prettier --write"
+    "!(*.{js,ts})": [
+      "prettier --ignore-unknown --write"
+    ],
+    "*.{js,ts}": [
+      "eslint --cache --fix --quiet",
+      "prettier --write"
+    ]
   },
   "prettier": {
     "arrowParens": "avoid",
