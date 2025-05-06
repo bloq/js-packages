@@ -24,9 +24,6 @@
     "deps:check": "dependency-check --no-dev .",
     "test": "mocha && tsd"
   },
-  "dependencies": {
-    "debug": "^4.3.2"
-  },
   "nyc": {
     "all": true,
     "include": [
