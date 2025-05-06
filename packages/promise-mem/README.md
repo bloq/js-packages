@@ -1,6 +1,6 @@
 # promise-mem
 
-![NPM Version](https://img.shields.io/npm/v/promise-mem)
+![NPM Version](https://img.shields.io/npm/v/promise-mem)![npm bundle size](https://img.shields.io/bundlephobia/minzip/promise-mem)
 
 [Memoizes](https://en.wikipedia.org/wiki/Memoization) a promise-returning function.
 
