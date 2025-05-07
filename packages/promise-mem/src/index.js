@@ -1,7 +1,5 @@
 'use strict'
 
-const debug = require('debug')('promise-mem')
-
 /**
  * Memoizes a promise-returning function.
  *
@@ -27,22 +25,18 @@ function pMemoize(fn, options = {}) {
 
   return /** @type {T} */ (
     function (...args) {
-      debug('Called')
-
       const key = resolver(...args)
 
       if (cache.has(key)) {
         const cached = cache.get(key)
 
         if (cached.expires > Date.now()) {
-          debug('Returning cached result')
           return cached.data
         }
 
         cache.delete(key)
       }
 
-      debug('Calling fn')
       const data = Promise.resolve(fn(...args))
       cache.set(key, { data, expires: lazy ? Infinity : Date.now() + maxAge })
 
@@ -56,7 +50,6 @@ function pMemoize(fn, options = {}) {
           cache.delete(key)
         })
 
-      debug('Returning result')
       return data
     }
   )
