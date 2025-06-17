@@ -1,6 +1,6 @@
 {
   "name": "promise-mem",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Memoizes a promise-returning function",
   "keywords": [
     "async",
