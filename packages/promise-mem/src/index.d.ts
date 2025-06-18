@@ -2,7 +2,7 @@ type Options<TArgs extends any[]> = {
   cache?: Map<any, any>
   lazy?: boolean
   maxAge?: number
-  resolver: (...args: TArgs) => any
+  resolver?: (...args: TArgs) => any
 }
 
 type Fn<TReturnValue extends unknown, TArgs extends any[]> = (
