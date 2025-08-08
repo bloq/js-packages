@@ -1,7 +1,5 @@
 'use strict'
 
-const debug = require('debug')('promise-swr')
-
 /**
  * Caches a promise-returning function with a stale-while-revalidate strategy.
  *
@@ -32,18 +30,13 @@ function pSwr(fn, options = {}) {
   } = options
 
   return function (...args) {
-    debug('Function called')
-
     const key = resolver(...args)
-
     const cached = cache.get(key)
 
     const keyAge =
       !cached || cached.revalidating ? 0 : Date.now() - cached.timestamp
 
     if (!cached || keyAge > maxAge) {
-      debug(cached ? 'Cache expired' : 'Cache is empty')
-
       const _cached = {
         data: Promise.resolve(fn(...args)),
         revalidating: true,
@@ -55,34 +48,23 @@ function pSwr(fn, options = {}) {
         .then(function () {
           _cached.timestamp = Date.now()
           _cached.revalidating = false
-
-          debug('Cache set')
         })
-        .catch(function (err) {
-          debug('Cache set failed: %s', err.message)
-
+        .catch(function () {
           cache.delete(key)
         })
     } else if (keyAge > revalidate && !cached.revalidating) {
-      debug('Cache is stale, revalidating')
-
       cached.revalidating = true
       Promise.resolve(fn(...args))
         .then(function (result) {
           cached.data = Promise.resolve(result)
           cached.timestamp = Date.now()
           cached.revalidating = false
-
-          debug('Cache revalidated')
         })
-        .catch(function (err) {
-          debug('Cache revalidation failed: %s', err.message)
-
+        .catch(function () {
           cached.revalidating = false
         })
     }
 
-    debug('Returning cached data')
     return cache.get(key).data
   }
 }
