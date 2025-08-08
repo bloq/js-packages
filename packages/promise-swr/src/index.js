@@ -35,11 +35,8 @@ function pSwr(fn, options = {}) {
 
     const cached = cache.get(key)
 
-    const keyAge = cached
-      ? cached.revalidating
-        ? 0
-        : Date.now() - cached.timestamp
-      : 0
+    const keyAge =
+      !cached || cached.revalidating ? 0 : Date.now() - cached.timestamp
 
     if (!cached || keyAge > maxAge) {
       debug(cached ? 'Cache expired' : 'Cache is empty')
