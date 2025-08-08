@@ -109,7 +109,7 @@ describe('Stale While Revalidating', function () {
       .then(function (res) {
         res.should.equal(1)
         fn.callCount.should.equal(1)
-        return setTimeout(ticks(4))
+        return setTimeout(ticks(5))
       })
       .then(wrapped)
       .then(function (res) {
