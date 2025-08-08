@@ -60,7 +60,7 @@ function pSwr(fn, options = {}) {
 
           cache.delete(key)
         })
-    } else if (keyAge > revalidate) {
+    } else if (keyAge > revalidate && !cached.revalidating) {
       debug('Cache is stale, revalidating')
 
       cached.revalidating = true
