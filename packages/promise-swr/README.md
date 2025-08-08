@@ -73,6 +73,7 @@ Type: `number`
 Default: `Infinity`
 
 The maximum time in milliseconds to keep a value in the cache.
+Using this default will prevent cache entries from being evicted and cache size can then grow indefinitely
 
 ##### options.resolver?
 
@@ -81,6 +82,7 @@ Default: `(...args) => args[0]`
 
 Determines how the caching key will be computed.
 By default, it will only consider the first argument and use strict equality to evaluate a match.
+Provide your custom resolver if the wrapped function takes multiple arguments or uses objects/arrays as argument.
 
 ##### options.revalidate?
 
