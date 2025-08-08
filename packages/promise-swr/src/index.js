@@ -12,13 +12,16 @@ const debug = require('debug')('promise-swr')
  * the data is below the revalidation threshold, it is fresh and is returned
  * right away.
  *
- * @param {Function} fn The function to cache.
+ * @template {any[]} T Tuple of argument types for the wrapped function.
+ * @template K Type of the cache key.
+ * @template R Return type of the wrapped function.
+ * @param {(...args: T) => R | Promise<R>} fn The function to cache.
  * @param {object} [options] The options.
- * @param {Map} [options.cache] The storage. Must implement the `Map` interface.
+ * @param {Map<K, any>} [options.cache] The cache. Follows the `Map` interface.
  * @param {number} [options.maxAge] The max time to cache any result in ms.
- * @param {Function} [options.resolver] The key resolver function.
+ * @param {(...args: T) => K} [options.resolver] The key resolver function.
  * @param {number} [options.revalidate] The max time to wait until revalidating.
- * @returns {Function} The cached function.
+ * @returns {(...args: T) => Promise<R>} A function that caches `fn`.
  */
 function pSwr(fn, options = {}) {
   const {
