@@ -1,6 +1,6 @@
 {
   "name": "promise-swr",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Caches a promise-returning function with a stale-while-revalidate strategy",
   "keywords": [
     "async",
@@ -25,9 +25,6 @@
     "coverage": "nyc npm run test",
     "deps:check": "dependency-check --no-dev .",
     "test": "mocha"
-  },
-  "dependencies": {
-    "debug": "^4.3.2"
   },
   "nyc": {
     "all": true,
