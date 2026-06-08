@@ -24,6 +24,7 @@
     "node": ">=16"
   },
   "repository": "bloq/js-packages",
+  "types": "index.d.ts",
   "scripts": {
     "coverage": "nyc npm run test",
     "test": "mocha"

@@ -2,6 +2,7 @@
   "name": "many-promises",
   "license": "MIT",
   "scripts": {
+    "deps:check": "knip",
     "format:check": "prettier --check .",
     "lint": "eslint --cache .",
     "test": "npx lerna run test --concurrency 1 --stream",
@@ -16,9 +17,10 @@
     "eslint": "^8.43.0",
     "eslint-config-bloq": "^3.4.0",
     "husky": "^4.3.8",
+    "knip": "^6.14.2",
     "lint-staged": "^13.2.2",
     "mocha": "^10.3.0",
-    "nock": "13.3.0",
+    "nock": "^14.0.15",
     "nyc": "^15.1.0",
     "prettier": "^2.8.8",
     "sinon": "^15.2.0"

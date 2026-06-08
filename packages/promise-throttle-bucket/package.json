@@ -17,7 +17,6 @@
   "main": "src/index.js",
   "scripts": {
     "coverage": "nyc npm run test",
-    "deps:check": "dependency-check --no-dev .",
     "test": "mocha"
   },
   "dependencies": {

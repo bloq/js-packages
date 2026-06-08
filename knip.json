@@ -1,0 +1,9 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "ignoreDependencies": ["eslint-config-prettier"],
+  "workspaces": {
+    "packages/promise-mem": {
+      "entry": ["test-d/index.test-d.ts"]
+    }
+  }
+}
